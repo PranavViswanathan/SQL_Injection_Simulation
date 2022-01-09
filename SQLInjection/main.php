@@ -64,11 +64,13 @@ In some situations, an attacker can escalate an SQL injection attack to compromi
         <br>
             <div class="FinalOutput">
                 <?php
+
                 if (isset($_GET['fname']) && isset($_GET['lname'])) {
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "ganesh99";
-                    $dbname = "owasp";
+                    $ini = parse_ini_file('app.ini');
+                    $servername = $ini['server_name']; 
+                    $username = $ini['db_user'];
+                    $password = $ini['db_password'];
+                    $dbname = $ini['db_name'];
             
                     $conn = new mysqli($servername, $username, $password, $dbname);
             
@@ -117,10 +119,12 @@ In some situations, an attacker can escalate an SQL injection attack to compromi
             <div class="FinalOutput2">
                 <?php
                 if (isset($_GET['userId'])) {
-                    $servername = "localhost";
-                    $username = "root";
-                    $password = "ganesh99";
-                    $dbname = "owasp";
+                    $ini = parse_ini_file('app.ini');
+                    $servername = $ini['server_name']; 
+                    $username = $ini['db_user'];
+                    $password = $ini['db_password'];
+                    $dbname = $ini['db_name'];
+
                     $conn = new mysqli($servername, $username, $password, $dbname);
             
                     if ($conn->connect_error) {
