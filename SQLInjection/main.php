@@ -95,3 +95,69 @@ In some situations, an attacker can escalate an SQL injection attack to compromi
             ?>
         
     </section>
+
+
+ <!-- Second Injection -->
+
+
+
+ <section class="injection" id="main" style="background-color: #104b55">
+        <div class="injectionHeading">
+            <h1>TRY IT OUT - 2</h1>
+        </div>
+        <div class="main">
+            <form action="main.php" method="get">
+                <b>User ID : </b><input  name="userId" class="input-stuff" required/>
+                <br>
+                <br>
+                <center><input type="submit" class="btn-submit"></center>
+            </form>
+        </div>
+        <br>
+            <div class="FinalOutput2">
+                <?php
+                if (isset($_GET['userId'])) {
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "ganesh99";
+                    $dbname = "owasp";
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+            
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    $id = $_GET['userId'];
+
+                    //$sql = "SELECT id, fname, lname FROM myDB WHERE fname = '$userFirstName' AND lname = '$userLastName'";
+                    $sql = "SELECT id, fname, lname FROM myDB WHERE id = '$id';";
+                    $result = $conn->query($sql);
+                    //echo $result;
+                    if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                        echo "| id: " . $row["id"]. " | Name : " . $row["fname"]. " " . $row["lname"]. " |<br>";
+                        //echo $sql;
+                        
+                    }
+                    } else {
+                        echo "0 results";
+                    }
+                    
+                    $conn->close();
+                }
+            ?>
+        </div>
+    </section>
+
+   
+</body>
+<script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
+</html>
