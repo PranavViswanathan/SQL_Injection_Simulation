@@ -1,5 +1,6 @@
 ![SQL injection banner](https://github.com/PranavViswanathan/SQL_Injection_Simulation/blob/main/ReadmeResources/SQLInjectionBanner.gif)
 
+This project was made for OWASP VIT Student Chapter
 
 SQL injection, also known as SQLI, is a common attack vector that uses malicious SQL code for backend database manipulation to access information that was not intended to be displayed. This information may include any number of items, including sensitive company data, user lists or private customer details.
 
