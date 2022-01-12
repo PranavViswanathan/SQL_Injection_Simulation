@@ -19,7 +19,7 @@ The impact SQL injection can have on a business is far-reaching. A successful at
 <div align="center">
   
   
-| Person  | Linkedin |
+| Person  | Github |
 | ------------- | ------------- |
-| Pranav Viswanathan  | [Linkedin](https://github.com/PranavViswanathan)  |
-| Prateek Mohanty  | [Linkedin](https://github.com/prateekmohanty63)  |
+| Pranav Viswanathan  | [Github](https://github.com/PranavViswanathan)  |
+| Prateek Mohanty  | [Github](https://github.com/prateekmohanty63)  |
